@@ -170,6 +170,16 @@ EOF
   fi
 fi
 
+# rationale: alias útiles de propósito general
+  if alias open="xdg-open" &> /dev/null
+  then
+    sudo tee -a $aplicacion << 'EOF'
+# rationale: alias para comando xdg-open
+alias open="xdg-open"
+EOF
+  fi
+fi
+
 # rationale: se adiciona una línea en los .bashrc que hace un source al glud.sh
 # para el futuro se planea hacerlo para /etc/profile.d ?
 # la decisión fue NO, es mejor dejarlo en el directorio de usuario debido a qué
